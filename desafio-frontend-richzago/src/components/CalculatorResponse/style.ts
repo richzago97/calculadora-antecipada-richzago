@@ -1,19 +1,17 @@
 import styled from "styled-components";
 
-export const StyledContainerCalculatorResponse = styled.div`
+export const CalculatorResponseContainer = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 2rem 0;
 
   .sectionTwo {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    background-color: #d3d3d3;
-
-    margin: 1rem 0;
-    padding: 1rem;
-    gap: 5px;
+    gap: 1rem;
+    background: #daf1f7;
+    width: 100vw;
 
     > h3,
     p {

@@ -1,5 +1,5 @@
-import { ReactNode, createContext } from "react";
-import { IRequestForm } from "../interfaces/requestForm";
+import React, { ReactNode, createContext, useState } from "react";
+import { IDays, IRequestForm } from "../interfaces/calculator";
 import api from "../services/api";
 
 interface ICalculatorProviderProps {
@@ -7,7 +7,9 @@ interface ICalculatorProviderProps {
 }
 
 interface ICalculatorProviderData {
-  handleSubmitCalculatorForm: (data: IRequestForm) => Promise<void>;
+  handleSubmitCalculatorForm: (data: IRequestForm) => void;
+  setDay: React.Dispatch<React.SetStateAction<IDays>>;
+  day: IDays;
 }
 
 export const CalculatorContext = createContext<ICalculatorProviderData>(
@@ -15,21 +17,26 @@ export const CalculatorContext = createContext<ICalculatorProviderData>(
 );
 
 export const CalculatorProvider = ({ children }: ICalculatorProviderProps) => {
-  const handleSubmitCalculatorForm = async (data: IRequestForm) => {
-    const amount = +data.amount * 100;
-    const dataCalculator = {
-      amount: amount,
-      installments: +data.installments,
-      mdr: +data.mdr,
-    };
-    await api
-      .post("/", dataCalculator)
-      .then((response) => console.log(response))
+  const [day, setDay] = useState({
+    1: 0,
+    15: 0,
+    30: 0,
+    90: 0,
+  });
+  const handleSubmitCalculatorForm = (data: IDays) => {
+    api
+      .post("/", data)
+      .then(() => setDay(data))
       .catch((err) => console.log(err));
   };
-
   return (
-    <CalculatorContext.Provider value={{ handleSubmitCalculatorForm }}>
+    <CalculatorContext.Provider
+      value={{
+        handleSubmitCalculatorForm,
+        day,
+        setDay,
+      }}
+    >
       {children}
     </CalculatorContext.Provider>
   );
