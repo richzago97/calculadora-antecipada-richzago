@@ -24,7 +24,18 @@ export const StyledContainerCalculator = styled.div`
     }
   }
 
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
   input {
+    min-width: 190px;
     padding: 5px;
     font-size: 16px;
     border-width: 1px;
@@ -64,5 +75,9 @@ export const StyledContainerCalculator = styled.div`
     background-color: #fff;
     color: #0066cc;
     border: solid 2px #0066cc;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 30vw;
   }
 `;

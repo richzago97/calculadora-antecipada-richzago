@@ -18,15 +18,19 @@ export const CalculatorContext = createContext<ICalculatorProviderData>(
 
 export const CalculatorProvider = ({ children }: ICalculatorProviderProps) => {
   const [day, setDay] = useState({
-    1: 0,
-    15: 0,
-    30: 0,
-    90: 0,
+    "1": 0,
+    "15": 0,
+    "30": 0,
+    "90": 0,
   });
-  const handleSubmitCalculatorForm = (data: IDays) => {
+  const handleSubmitCalculatorForm = (data: IRequestForm) => {
     api
-      .post("/", data)
-      .then(() => setDay(data))
+      .post("/", {
+        amount: data.amount,
+        installments: data.installments,
+        mdr: data.mdr,
+      })
+      .then((res) => setDay(res.data))
       .catch((err) => console.log(err));
   };
   return (
