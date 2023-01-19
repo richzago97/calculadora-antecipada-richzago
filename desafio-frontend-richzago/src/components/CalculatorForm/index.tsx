@@ -27,20 +27,16 @@ export const CalculatorForm = () => {
           <input
             type="number"
             placeholder="R$"
-            id="amount"
+            min="1000"
             {...register("amount")}
           />
           <p>{errors.amount?.message}</p>
           <label htmlFor="installments">Em quantas parcelas *</label>
-          <input
-            type="number"
-            id="installments"
-            {...register("installments")}
-          />
+          <input type="number" min="1" max="12" {...register("installments")} />
           <span>Máximo de 12 parcelas</span>
           <p>{errors.installments?.message}</p>
           <label htmlFor="mdr">Informe o percentual de MDR *</label>
-          <input type="number" id="mdr" {...register("mdr")} />
+          <input type="number" min="1" {...register("mdr")} />
           <p>{errors.mdr?.message}</p>
           <button className="btn">Calcular</button>
         </div>
