@@ -10,18 +10,27 @@ export const CalculatorResponseContainer = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    background: #daf1f7;
+    background: #f7fafb;
     width: 100vw;
 
     > h3,
     p {
-      color: blue;
+      color: #219ebc;
       font-weight: bolder;
     }
 
     > hr {
-      border-top: 1px solid blue;
+      border-top: 1px solid #219ebc;
       width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    background: #f7fafb;
+    .sectionTwo {
+      background: none;
+      height: 50vh;
+      width: 20vw;
     }
   }
 `;
