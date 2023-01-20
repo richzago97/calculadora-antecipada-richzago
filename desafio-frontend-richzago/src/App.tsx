@@ -9,7 +9,6 @@ function App() {
       <CalculatorProvider>
         <Global />
         <CalculatorPage />
-        {/* <CalculatorComponent /> */}
       </CalculatorProvider>
     </>
   );

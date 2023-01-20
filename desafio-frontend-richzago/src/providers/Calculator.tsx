@@ -8,8 +8,8 @@ interface ICalculatorProviderProps {
 
 interface ICalculatorProviderData {
   handleSubmitCalculatorForm: (data: IRequestForm) => void;
-  setDay: React.Dispatch<React.SetStateAction<IDays>>;
-  day: IDays;
+  setDays: React.Dispatch<React.SetStateAction<IDays>>;
+  days: IDays;
 }
 
 export const CalculatorContext = createContext<ICalculatorProviderData>(
@@ -17,7 +17,7 @@ export const CalculatorContext = createContext<ICalculatorProviderData>(
 );
 
 export const CalculatorProvider = ({ children }: ICalculatorProviderProps) => {
-  const [day, setDay] = useState({
+  const [days, setDays] = useState({
     "1": 0,
     "15": 0,
     "30": 0,
@@ -30,15 +30,15 @@ export const CalculatorProvider = ({ children }: ICalculatorProviderProps) => {
         installments: data.installments,
         mdr: data.mdr,
       })
-      .then((res) => setDay(res.data))
-      .catch((err) => console.log(err));
+      .then((res: any) => setDays(res.data))
+      .catch((err: any) => console.log(err));
   };
   return (
     <CalculatorContext.Provider
       value={{
         handleSubmitCalculatorForm,
-        day,
-        setDay,
+        days,
+        setDays,
       }}
     >
       {children}
