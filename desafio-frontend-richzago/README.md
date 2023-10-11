@@ -1,46 +1,36 @@
-# Getting Started with Create React App
+# Documentação da Aplicação Calculadora Antecipada
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Visão Geral
+A Calculadora Antecipada é uma aplicação desenvolvida para ajudar os clientes a calcular os valores que receberão caso optem por antecipar o recebimento de transações. A aplicação foi criada com o uso do React e atende a um conjunto de requisitos que permitem aos usuários configurar os períodos de recebimento e realizar cálculos.
 
-## Available Scripts
+## Restrições
+Durante o desenvolvimento da aplicação Calculadora Antecipada, as seguintes restrições foram aplicadas:
 
-In the project directory, you can run:
+- **Não é permitido:** Utilizar frameworks e/ou bibliotecas de UI que não sejam o React (por exemplo, Vue.js ou Angular).
+- **São permitidas:** Ferramentas modernas de desenvolvimento, como TypeScript, Babel, eslint, webpack, assim como o uso de polyfills e/ou bibliotecas para testes.
+- **São permitidos:** Pré-processadores de CSS e/ou ferramentas CSS-in-JS.
+- **Evite usar:** lodash, underscore, ramda e bibliotecas similares.
 
-### `yarn start`
+## Requisitos
+A aplicação Calculadora Antecipada deve atender aos seguintes requisitos:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Usar componentização para organizar o código de forma eficiente.
+- Permitir a configuração dos períodos de recebimento, já que a API pode receber uma lista de períodos para realizar os cálculos.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Funcionalidades
+A aplicação Calculadora Antecipada possui as seguintes funcionalidades:
 
-### `yarn test`
+1. Componentização: O código é organizado em componentes reutilizáveis para facilitar o desenvolvimento e a manutenção.
+2. Configuração de Períodos: Os períodos de recebimento podem ser configurados pelos usuários para atender às necessidades específicas.
+3. Cálculos de Antecipação: A aplicação realiza cálculos com base nos períodos de recebimento configurados para que os clientes saibam quais valores receberão caso optem por antecipar o recebimento.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Como Executar a Aplicação
+Para executar a aplicação Calculadora Antecipada, siga as etapas abaixo:
 
-### `yarn build`
+1. Clone o repositório do projeto para o seu ambiente de desenvolvimento.
+2. Instale as dependências do projeto com o comando: `npm install`.
+3. Execute o projeto com o comando: `npm start`.
+4. Acesse a aplicação em um navegador da web no endereço: `http://localhost:3000`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Considerações Finais
+A aplicação Calculadora Antecipada é uma ferramenta útil para clientes que desejam calcular os valores que receberão ao antecipar o recebimento de transações. Ela foi desenvolvida de acordo com as restrições e requisitos especificados e permite a configuração flexível dos períodos de recebimento. Certifique-se de seguir as instruções para executar a aplicação em seu ambiente de desenvolvimento e personalizá-la conforme necessário.
